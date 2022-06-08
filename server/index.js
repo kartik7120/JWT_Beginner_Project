@@ -11,3 +11,9 @@ app.use(cors({
     origin: "http://localhost:3000",
     credentials: true
 }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.listen(process.env.PORT, () => {
+    console.log(`Server is listening on port ${process.env.PORT}`);
+})
