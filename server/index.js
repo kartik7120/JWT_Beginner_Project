@@ -14,6 +14,17 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.post("/register", async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        // Check if the user exist
+
+        const hashedPassword = await hash(password, 10);
+        console.log(hashedPassword);
+    } catch (error) {
+    }
+})
+
 app.listen(process.env.PORT, () => {
     console.log(`Server is listening on port ${process.env.PORT}`);
 })
