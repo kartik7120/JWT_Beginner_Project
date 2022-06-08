@@ -30,7 +30,7 @@ app.post("/register", async (req, res) => {
         res.send({ message: "User created" });
     } catch (error) {
         res.send({
-            error: `${error.message}`;
+            error: `${error.message}`
         })
     }
 })
